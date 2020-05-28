@@ -1145,6 +1145,7 @@ GameObject:
   - component: {fileID: 856222989}
   - component: {fileID: 856222988}
   - component: {fileID: 856222992}
+  - component: {fileID: 856222993}
   m_Layer: 0
   m_Name: Squirrel
   m_TagString: Untagged
@@ -1167,9 +1168,6 @@ MonoBehaviour:
   moveSpeed: 0.1
   rb: {fileID: 856222989}
   animator: {fileID: 856222992}
-  maxHealth: 100
-  currentHealth: 100
-  healthBar: {fileID: 1307082411}
   isMoving: 0
 --- !u!50 &856222989
 Rigidbody2D:
@@ -1276,6 +1274,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &856222993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856222987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a044bdca1edbca4f902b8c3c2c6289b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 1307082411}
 --- !u!1 &1106174063
 GameObject:
   m_ObjectHideFlags: 0

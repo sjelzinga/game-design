@@ -11,11 +11,6 @@ public class SquirrelMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
 
-    public int maxHealth = 100;
-    public int currentHealth;
-
-    public HealthBar healthBar;
-
     private Vector3 min, max;
     Vector3 mousePosition;
     Vector2 position = new Vector2(0f, 0f);
@@ -26,8 +21,6 @@ public class SquirrelMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        currentHealth = maxHealth;
-        healthBar.SetHealth(maxHealth);
         max.x = 8f;
         max.y = 3.45f;
         min.x = 8f;
@@ -54,12 +47,6 @@ public class SquirrelMovement : MonoBehaviour
                 isMoving = false;
                 animator.SetFloat("Speed", position.sqrMagnitude);
 
-        }
-
-        // replace by a timer
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            DecreaseHealth(20);
         }
     }
 
@@ -89,13 +76,6 @@ public class SquirrelMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(position);
-    }
-
-    void DecreaseHealth(int damage)
-    {
-        currentHealth -= damage;
-
-        healthBar.SetHealth(currentHealth);
     }
 }
 
