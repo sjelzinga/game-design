@@ -3910,7 +3910,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game Over
+  m_Text: Game Over Press Space To Restart
 --- !u!222 &1646408051
 CanvasRenderer:
   m_ObjectHideFlags: 0

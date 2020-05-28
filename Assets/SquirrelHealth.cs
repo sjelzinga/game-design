@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SquirrelHealth : MonoBehaviour
 {
@@ -26,6 +27,15 @@ public class SquirrelHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown("space"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 
     void DecreaseHealth(int health)
