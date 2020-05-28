@@ -12,6 +12,8 @@ public class SquirrelHealth : MonoBehaviour
 
     public HealthBar healthBar;
     public Text gameOver;
+    private GameObject pickUpObj;
+
 
     void Start()
     {
@@ -24,7 +26,6 @@ public class SquirrelHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     void DecreaseHealth(int health)
@@ -57,6 +58,26 @@ public class SquirrelHealth : MonoBehaviour
         {
             gameOver.gameObject.SetActive(true);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("PickUp"))
+        {
+            collision.gameObject.SetActive(false);
+            IncreaseHealth(10);
+            StartCoroutine(RespawnPickUp(collision.gameObject, Random.Range(5,10)));
+
+            //Invoke("RespawnPickUp", Random.Range(5, 10));
+           
+        }
+    }
+
+    private IEnumerator RespawnPickUp(GameObject gameObject, float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        if (!gameObject.activeSelf)
+            gameObject.SetActive(true);
     }
 
 }
